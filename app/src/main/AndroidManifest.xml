@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.codechris.friends">
     
-    <permission android:name="org.example.android.friends.provider.READWRITE"/>
-    <uses-permission android:name="org.example.android.friends.provider.READWRITE"/>
+    <permission android:name="com.codechris.friends.provider.READWRITE"/>
+    <uses-permission android:name="com.codechris.friends.provider.READWRITE"/>
 
     <application
         android:allowBackup="true"
@@ -23,10 +23,10 @@
         </activity>
         <provider
             android:name="com.codechris.friends.FriendsProvider"
-            android:authorities="org.example.android.friends.provider"
+            android:authorities="com.codechris.friends.provider"
             android:exported="true"
-            android:readPermission="org.example.android.friends.provider.READWRITE"
-            android:writePermission="org.example.android.friends.provider.READWRITE"/>
+            android:readPermission="com.codechris.friends.READWRITE"
+            android:writePermission="com.codechris.friends.READWRITE"/>
     </application>
 
 </manifest>
