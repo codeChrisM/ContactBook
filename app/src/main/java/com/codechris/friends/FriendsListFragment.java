@@ -15,7 +15,7 @@ import java.util.List;
 public class FriendsListFragment extends ListFragment
 implements LoaderManager.LoaderCallbacks<List<Friend>> {
     private static final String LOG_TAG = FriendsListFragment.class.getSimpleName();
-    private FriendsCustomAdaptor mAdapter;
+    private FriendsCustomAdapter mAdapter;
     private  static final int LOADER_ID = 1;
     private ContentResolver mContentResolver;
     private List<Friend> mFriends;
