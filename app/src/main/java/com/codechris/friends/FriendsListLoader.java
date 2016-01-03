@@ -1,11 +1,13 @@
 package com.codechris.friends;
 
-import android.content.AsyncTaskLoader;
+
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.BaseColumns;
+import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
+
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -14,7 +16,7 @@ import java.util.List;
 /**
  * Created by Christopher on 12/30/2015.
  */
-public class FriendsListLoader extends AsyncTaskLoader<List<Friend>>{
+public class FriendsListLoader extends AsyncTaskLoader<List<Friend>> {
     private static final String LOG_TAG = FriendsListLoader.class.getSimpleName();
     private List<Friend> mFriends;
     private ContentResolver mContentResolver;
@@ -25,6 +27,8 @@ public class FriendsListLoader extends AsyncTaskLoader<List<Friend>>{
         mContentResolver =contentResolver;
 
     }
+
+
 
     @Override
     public List<Friend> loadInBackground() {
