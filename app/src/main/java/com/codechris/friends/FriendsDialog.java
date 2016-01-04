@@ -16,10 +16,12 @@ import android.widget.TextView;
  * Created by Christopher on 1/3/2016.
  */
 public class FriendsDialog extends DialogFragment{
+    private static final String LOG_TAG = FriendsDialog.class.getSimpleName();
     private LayoutInflater mLayoutInflater;
     public static final String DIALOG_TYPE = "command";
     public static final String DELETE_RECORD= "deleteRecord";
     public static final String DELETE_DATABASE= "deleteDatabase";
+    public static final String CONFIRM_EXIT= "confirmExit";
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -57,9 +59,18 @@ public class FriendsDialog extends DialogFragment{
                     startActivity(intent);
                 }
             });
+        }else if(command.equals(CONFIRM_EXIT)){
+            TextView popupMessage = (TextView) view.findViewById(R.id.popup_message);
+            popupMessage.setText("Are you sure you wish to exit with out saveing?");
+            builder.setView(view).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    getActivity().finish();
+                }else{
+                    log.d(LOG_TAG, "invalid command passed as parameter")
+                }
+
+
+                return builder.create();
+            }
         }
-
-
-        return builder.create();
-    }
-}
