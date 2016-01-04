@@ -19,6 +19,7 @@ public class FriendsDialog extends DialogFragment{
     private LayoutInflater mLayoutInflater;
     public static final String DIALOG_TYPE = "command";
     public static final String DELETE_RECORD= "deleteRecord";
+    public static final String DELETE_DATABASE= "deleteDatabase";
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -41,8 +42,23 @@ public class FriendsDialog extends DialogFragment{
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
-            })
+            });
+        }else if(command.equals(DELETE_DATABASE)){
+            TextView popupMessage = (TextView) view.findViewById(R.id.popup_message);
+            popupMessage.setText("Are you sure you want to DELETE the ENTIRE database?");
+            builder.setView(view).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    ContentResolver contentResolver = getActivity().getContentResolver();
+                    Uri uri = FriendsContract.URI_TABLE;
+                    contentResolver.delete(uri, null, null);
+                    Intent intent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            });
         }
+
 
         return builder.create();
     }
