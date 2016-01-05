@@ -45,7 +45,7 @@ public class addActivity extends FragmentActivity{
                     values.put(FriendsContract.FriendsColumns.FRIENDS_PHONE, mPhoneTextView.getText().toString());
                     Uri returned = mContentResolver.insert(FriendsContract.URI_TABLE, values);
                     Log.d(LOG_TAG, "record id returned is" + returned.toString());
-                    Intent intent = new Intent((addActivity.this, MainActivity.class));
+                    Intent intent = new Intent(addActivity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
@@ -59,7 +59,7 @@ public class addActivity extends FragmentActivity{
     private boolean isValid(){
         if(mNameTextView.getText().toString().length() == 0 ||
                 mPhoneTextView.getText().toString().length() == 0 ||
-                mEmailTextView.getText().toString().length()) == 0{
+                mEmailTextView.getText().toString().length() == 0){
             return false;
         }else{
             return true;

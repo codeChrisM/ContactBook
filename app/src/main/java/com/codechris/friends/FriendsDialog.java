@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -61,16 +62,17 @@ public class FriendsDialog extends DialogFragment{
             });
         }else if(command.equals(CONFIRM_EXIT)){
             TextView popupMessage = (TextView) view.findViewById(R.id.popup_message);
-            popupMessage.setText("Are you sure you wish to exit with out saveing?");
             builder.setView(view).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     getActivity().finish();
-                }else{
-                    log.d(LOG_TAG, "invalid command passed as parameter")
                 }
-
-
-                return builder.create();
+            });
+            }else{
+                Log.d(LOG_TAG, "invalid command passed as parameter");
             }
+            return builder.create();
+
+            popupMessage.setText("Are you sure you wish to exit with out saveing?");
         }
+    }

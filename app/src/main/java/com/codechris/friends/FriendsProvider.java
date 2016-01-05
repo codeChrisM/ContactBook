@@ -55,7 +55,7 @@ public class FriendsProvider extends ContentProvider {
     @Nullable
     @Override
     public String getType(Uri uri) {
-        final int match - sUriMatcher.match(uri);
+        final int match = sUriMatcher.match(uri);
         switch (match){
             case FRIENDS:
                 return FriendsContract.Friends.CONTENT_TYPE;
@@ -99,7 +99,7 @@ public class FriendsProvider extends ContentProvider {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         final int match = sUriMatcher.match(uri);
         switch (match){
-            case FRIENDS
+            case FRIENDS:
                 long recordId = db.insertOrThrow(FriendsDatabase.Tables.FRIENDS, null, values);
                 return FriendsContract.Friends.buildFriendUri(String.valueOf(recordId));
             default:

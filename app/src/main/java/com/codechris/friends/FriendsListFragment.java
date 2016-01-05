@@ -30,7 +30,7 @@ implements LoaderManager.LoaderCallbacks<List<Friend>> {
         setListAdapter(mAdapter);
         setListShown(false);
 
-        getLoaderManager().initLoader(LOADER_ID, null, this)
+        getLoaderManager().initLoader(LOADER_ID, null, this);
     }
 
     @Override

@@ -49,7 +49,7 @@ public class FriendsCustomAdapter extends ArrayAdapter<Friend>{
         editButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), editActivity.class);
+                Intent intent = new Intent(getContext(), EditActivity.class);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_ID, String.valueOf(_id));
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_ID, name);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_ID, phone);
