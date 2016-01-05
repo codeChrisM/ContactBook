@@ -10,7 +10,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@android:style/Theme.WithActionBar">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -21,6 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".addActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/add_friend_title"/>
+
+        <activity android:name=".EditActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/edit_friend_title"/>
+
+        <activity android:name=".SearchActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/search_friends_title"/>
+
         <provider
             android:name="com.codechris.friends.FriendsProvider"
             android:authorities="com.codechris.friends.provider"

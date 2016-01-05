@@ -113,7 +113,7 @@ public class FriendsProvider extends ContentProvider {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         final int match = sUriMatcher.match(uri);
 
-        String selectionCriteria + selection;
+        String selectionCriteria = selection;
         switch (match){
             case FRIENDS:
                 //do nothing
@@ -126,7 +126,7 @@ public class FriendsProvider extends ContentProvider {
 
 
             default:
-                throw new IllegalArgumentException("unknown Uri" + uri)
+                throw new IllegalArgumentException("unknown Uri" + uri);
         }
         int updateCount = db.update(FriendsDatabase.Tables.FRIENDS, values, selectionCriteria, selectionArgs);
     }
@@ -143,17 +143,17 @@ public class FriendsProvider extends ContentProvider {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         final int match = sUriMatcher.match(uri);
 
-        String selectionCriteria + selection;
+        String selectionCriteria = selection;
         switch (match) {
             case FRIENDS_ID:
                 String id = FriendsContract.Friends.getFriendId(uri);
                 String selectionCriteria = BaseColumns._ID+ "="+ id
                         +(!TextUtils.isEmpty(selection)) ? "And (" + selection + ")" :"";
-                return db.delete(FriendsDatabase.Tables.FRIENDS, selectionCriteria, selectionArgs)
+                return db.delete(FriendsDatabase.Tables.FRIENDS, selectionCriteria, selectionArgs);
                 break;
 
             default:
-                throw new IllegalArgumentException("unknown Uri" + uri)
+                throw new IllegalArgumentException("unknown Uri" + uri);
         }
         }
     }

@@ -44,7 +44,7 @@ public class SearchActivity extends FragmentActivity
             @Override
             public void onClick(View v) {
                 matchText = mSearchEditText.getText().toString();
-                getSupportLoaderManager().initLoader(LOADER_ID++, null, SearchActivity.this)
+                getSupportLoaderManager().initLoader(LOADER_ID++, null, SearchActivity.this);
             }
         });
     }

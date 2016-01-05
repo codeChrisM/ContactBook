@@ -2,16 +2,12 @@ package com.codechris.friends;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Switch;
+
 
 public class MainActivity extends FragmentActivity {
 
@@ -39,7 +35,8 @@ public class MainActivity extends FragmentActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
 
-        Switch(item.getItemId()){
+        switch(item.getItemId()) {
+
             case R.id.addRecord:
                 Intent intent = new Intent(MainActivity.this, addActivity.class);
                 startActivity(intent);

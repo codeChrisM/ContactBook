@@ -62,17 +62,21 @@ public class FriendsDialog extends DialogFragment{
             });
         }else if(command.equals(CONFIRM_EXIT)){
             TextView popupMessage = (TextView) view.findViewById(R.id.popup_message);
+            popupMessage.setText("Are you sure you wish to exit with out saveing?");
             builder.setView(view).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     getActivity().finish();
                 }
             });
-            }else{
-                Log.d(LOG_TAG, "invalid command passed as parameter");
-            }
-            return builder.create();
 
-            popupMessage.setText("Are you sure you wish to exit with out saveing?");
+        }else{
+            Log.d(LOG_TAG, "invalid command passed as parameter");
         }
-    }
+        return builder.create();
+
+
+        }
+
+
+}
