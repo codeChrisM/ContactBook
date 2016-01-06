@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 /**
  * Created by Christopher on 1/4/2016.
@@ -30,8 +30,8 @@ public class EditActivity extends FragmentActivity{
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         mNameTextView = (TextView) findViewById(R.id.friendName);
-        mNameTextView = (TextView) findViewById(R.id.friendEmail);
-        mNameTextView = (TextView) findViewById(R.id.friendPhone);
+        mEmailTextView = (TextView) findViewById(R.id.friendEmail);
+        mPhoneTextView = (TextView) findViewById(R.id.friendPhone);
 
         mContentResolver = EditActivity.this.getContentResolver();
 
@@ -54,7 +54,7 @@ public class EditActivity extends FragmentActivity{
                 values.put(FriendsContract.FriendsColumns.FRIENDS_EMAIL, mEmailTextView.getText().toString());
                 values.put(FriendsContract.FriendsColumns.FRIENDS_PHONE, mPhoneTextView.getText().toString());
                 Uri uri = FriendsContract.Friends.buildFriendUri(_id);
-                Uri recordsUpdated = mContentResolver.update(uri, values,null, null);
+                int recordsUpdated = mContentResolver.update(uri, values, null, null);
                 Log.d(LOG_TAG, "number of records updated =" + recordsUpdated);
                 Intent intent = new Intent(EditActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

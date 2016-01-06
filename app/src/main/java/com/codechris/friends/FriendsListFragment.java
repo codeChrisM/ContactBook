@@ -34,7 +34,7 @@ implements LoaderManager.LoaderCallbacks<List<Friend>> {
     }
 
     @Override
-    public Loader<List<Friend>> onCreateLoader(int id, Bundle args) {
+    public Loader<List<Friend>> onCreateLoader(int i, Bundle args) {
         mContentResolver = getActivity().getContentResolver();
         return new FriendsListLoader(getActivity(), FriendsContract.URI_TABLE, mContentResolver);
     }
@@ -52,6 +52,6 @@ implements LoaderManager.LoaderCallbacks<List<Friend>> {
 
     @Override
     public void onLoaderReset(Loader<List<Friend>> loader) {
-        mAdapter.set(null);
+        mAdapter.setData(null);
     }
 }

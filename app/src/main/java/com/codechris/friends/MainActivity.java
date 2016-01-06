@@ -19,7 +19,7 @@ public class MainActivity extends FragmentActivity {
             FriendsListFragment friendsListFragment = new FriendsListFragment();
             fragmentManager.beginTransaction().add(android.R.id.content, friendsListFragment).commit();
         }
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class MainActivity extends FragmentActivity {
                FriendsDialog dialog = new FriendsDialog();
                 Bundle arg = new Bundle();
                 arg.putString(FriendsDialog.DIALOG_TYPE, FriendsDialog.DELETE_DATABASE);
-                dialog.setArguments();
+                dialog.setArguments(arg);
                 dialog.show(getSupportFragmentManager(), "delete-database");
                 break;
 

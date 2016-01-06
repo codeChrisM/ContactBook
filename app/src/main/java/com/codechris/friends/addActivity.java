@@ -29,8 +29,8 @@ public class addActivity extends FragmentActivity{
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         mNameTextView = (TextView) findViewById(R.id.friendName);
-        mNameTextView = (TextView) findViewById(R.id.friendEmail);
-        mNameTextView = (TextView) findViewById(R.id.friendPhone);
+        mEmailTextView = (TextView) findViewById(R.id.friendEmail);
+        mPhoneTextView = (TextView) findViewById(R.id.friendPhone);
 
         mContentResolver = addActivity.this.getContentResolver();
 

@@ -4,12 +4,13 @@ package com.codechris.friends;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.provider.BaseColumns;
 import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
 
 
-import java.net.URI;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class FriendsListLoader extends AsyncTaskLoader<List<Friend>> {
     private ContentResolver mContentResolver;
     private Cursor mCursor;
 
-    public FriendsListLoader(Context context, URI uri, ContentResolver contentResolver){
-        super(Context);
+    public FriendsListLoader(Context context, Uri uri, ContentResolver contentResolver){
+        super(context);
         mContentResolver =contentResolver;
 
     }

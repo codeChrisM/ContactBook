@@ -4,13 +4,14 @@ package com.codechris.friends;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.provider.BaseColumns;
 import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by Christopher on 12/30/2015.
@@ -22,12 +23,11 @@ public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
     private Cursor mCursor;
     private String mFilterText;
 
-    public FriendsSearchListLoader(Context context, URI uri, ContentResolver contentResolver, String filterText){
+    public FriendsSearchListLoader(Context context, Uri uri, ContentResolver contentResolver, String filterText){
         super(context);
         mContentResolver =contentResolver;
         mFilterText = filterText;
     }
-
 
 
     @Override

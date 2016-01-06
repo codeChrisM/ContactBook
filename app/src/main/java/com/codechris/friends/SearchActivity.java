@@ -33,9 +33,9 @@ public class SearchActivity extends FragmentActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_layout);
-        listView = (List) findViewById(R.id.searchResultList);
-        mSearchEditText = (EditText) findViewById(R.id. searchName);
-        mSearchFriendButton = (Button) findViewById(R.id. searchButton);
+        listView = (ListView) findViewById(R.id.searchResultList);
+        mSearchEditText = (EditText) findViewById(R.id.searchName);
+        mSearchFriendButton = (Button) findViewById(R.id.searchButton);
         mContentResolver = getContentResolver();
         mFriendsCustomAdapter = new FriendsCustomAdapter(SearchActivity.this, getSupportFragmentManager());
         listView.setAdapter(mFriendsCustomAdapter);
@@ -56,7 +56,7 @@ public class SearchActivity extends FragmentActivity
     }
 
     @Override
-    public void onLoadFinished(Loader<List<Friend>> loader, List<Friend> data) {
+    public void onLoadFinished(Loader<List<Friend>> loader, List<Friend> friends) {
         mFriendsCustomAdapter.setData(friends);
         this.friendsRetrieved = friends;
     }

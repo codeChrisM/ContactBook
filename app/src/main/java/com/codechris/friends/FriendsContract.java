@@ -2,7 +2,7 @@ package com.codechris.friends;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
-import android.text.StaticLayout;
+
 
 /**
  * Created by Christopher on 12/17/2015.
@@ -16,10 +16,10 @@ interface FriendsColumns {
 }
 
     public static final String CONTENT_AUTHORITY = "org.example.android.friends.provider";
-    public static final Uri BASE_CONTENT_URI = Uri.parse ("content://"+ CONTENT_AUTHORITY);
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     private static final String PATHS_FRIENDS = "friends";
-    public static final Uri URI_TABLE = Uri.parse(BASE_CONTENT_URI.toString() +"/" + PATHS_FRIENDS);
+    public static final Uri URI_TABLE = Uri.parse(BASE_CONTENT_URI.toString() + "/" + PATHS_FRIENDS);
 
     public static final String[] TOP_LEVELS_PATHS = {
       PATHS_FRIENDS

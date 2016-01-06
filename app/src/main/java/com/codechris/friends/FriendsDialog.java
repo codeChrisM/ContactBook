@@ -2,12 +2,13 @@ package com.codechris.friends;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
+
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 /**
  * Created by Christopher on 1/3/2016.
  */
-public class FriendsDialog extends DialogFragment{
+public class FriendsDialog extends DialogFragment {
     private static final String LOG_TAG = FriendsDialog.class.getSimpleName();
     private LayoutInflater mLayoutInflater;
     public static final String DIALOG_TYPE = "command";
