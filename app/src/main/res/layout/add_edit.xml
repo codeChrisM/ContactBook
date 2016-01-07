@@ -21,7 +21,8 @@
         android:id="@+id/friendPhone"
         android:hint="Phone number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="phone"/>/>
 
     <Button
         android:id="@+id/saveButton"

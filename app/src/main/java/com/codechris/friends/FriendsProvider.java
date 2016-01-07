@@ -19,6 +19,7 @@ import android.util.Log;
  * Created by Christopher on 12/17/2015.
  */
 public class FriendsProvider extends ContentProvider {
+
     private FriendsDatabase mOpenHelper;
 
     private static String Tag = FriendsProvider.class.getSimpleName();

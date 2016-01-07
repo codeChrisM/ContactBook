@@ -16,6 +16,11 @@ import java.util.List;
 /**
  * Created by Christopher on 12/30/2015.
  */
+
+
+
+
+
 public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
     private static final String LOG_TAG = FriendsSearchListLoader.class.getSimpleName();
     private List<Friend> mFriends;

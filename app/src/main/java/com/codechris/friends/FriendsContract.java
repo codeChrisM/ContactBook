@@ -15,7 +15,7 @@ interface FriendsColumns {
     String FRIENDS_PHONE = "friends_phone";
 }
 
-    public static final String CONTENT_AUTHORITY = "org.example.android.friends.provider";
+    public static final String CONTENT_AUTHORITY = "com.codechris.friends.provider";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     private static final String PATHS_FRIENDS = "friends";
