@@ -35,10 +35,10 @@
 
         <provider
             android:name="com.codechris.friends.FriendsProvider"
-            android:authorities="com.codechris.friends"
+            android:authorities="com.codechris.friends.provider"
             android:exported="true"
-            android:readPermission="com.codechris.friends.READWRITE"
-            android:writePermission="com.codechris.friends.READWRITE"
+            android:readPermission="com.codechris.friends.provider.READWRITE"
+            android:writePermission="com.codechris.friends.provider.READWRITE"
             />
     </application>
 

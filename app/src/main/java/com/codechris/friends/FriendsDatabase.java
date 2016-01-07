@@ -23,11 +23,11 @@ public class FriendsDatabase extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE"+ Tables.FRIENDS +" ("
-                + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + FriendsContract.FriendsColumns.FRIENDS_NAME + " TEXT NOT NULL,"
-                + FriendsContract.FriendsColumns.FRIENDS_EMAIL + " TEXT NOT NULL,"
-                + FriendsContract.FriendsColumns.FRIENDS_PHONE + " TEXT NOT NULL");
+        db.execSQL("CREATE TABLE " + Tables.FRIENDS + " ("
+        + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+        + FriendsContract.FriendsColumns.FRIENDS_NAME + " TEXT NOT NULL,"
+        + FriendsContract.FriendsColumns.FRIENDS_EMAIL + " TEXT NOT NULL,"
+        + FriendsContract.FriendsColumns.FRIENDS_PHONE + " TEXT NOT NULL)");
     }
 
     @Override
@@ -40,9 +40,9 @@ public class FriendsDatabase extends SQLiteOpenHelper{
         if (version != DATABASE_VERSION) {
             db.execSQL("DROP TABLE IF EXISTS" + Tables.FRIENDS);
             onCreate(db);
+        }
     }
 
-}
     public static void deleteDatabase(Context context){
         context.deleteDatabase(DATABASE_NAME);
     }
