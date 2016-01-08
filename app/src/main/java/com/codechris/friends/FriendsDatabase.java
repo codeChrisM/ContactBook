@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 
+
 public class FriendsDatabase extends SQLiteOpenHelper{
     private static final String TAG = FriendsDatabase.class.getSimpleName();
     private static final String DATABASE_NAME = "friends.db";
@@ -28,6 +29,7 @@ public class FriendsDatabase extends SQLiteOpenHelper{
         + FriendsContract.FriendsColumns.FRIENDS_NAME + " TEXT NOT NULL,"
         + FriendsContract.FriendsColumns.FRIENDS_EMAIL + " TEXT NOT NULL,"
         + FriendsContract.FriendsColumns.FRIENDS_PHONE + " TEXT NOT NULL)");
+
     }
 
     @Override

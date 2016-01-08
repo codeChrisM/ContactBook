@@ -30,7 +30,7 @@ public class SearchActivity extends FragmentActivity
     private String matchText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_layout);
         listView = (ListView) findViewById(R.id.searchResultList);
@@ -62,7 +62,6 @@ public class SearchActivity extends FragmentActivity
     }
 
     @Override
-    public void onLoaderReset(Loader<List<Friend>> loader) {
-        mFriendsCustomAdapter.setData(null);
+    public void onLoaderReset(Loader<List<Friend>> loader) {mFriendsCustomAdapter.setData(null);
     }
 }

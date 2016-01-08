@@ -88,7 +88,7 @@ public class FriendsListLoader extends AsyncTaskLoader<List<Friend>> {
             deliverResult(mFriends);
         }
 
-        if(takeContentChanged() || mFriends == null){
+        if(takeContentChanged() | mFriends == null){
             forceLoad();
         }
     }
@@ -116,9 +116,10 @@ public class FriendsListLoader extends AsyncTaskLoader<List<Friend>> {
         }
     }
 
+
     @Override
-    protected void onForceLoad() {
-        super.onForceLoad();
+    public void forceLoad() {
+        super.forceLoad();
     }
 }
 

@@ -1,6 +1,5 @@
 package com.codechris.friends;
 
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
@@ -16,10 +15,6 @@ import java.util.List;
 /**
  * Created by Christopher on 12/30/2015.
  */
-
-
-
-
 
 public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
     private static final String LOG_TAG = FriendsSearchListLoader.class.getSimpleName();
@@ -43,7 +38,7 @@ public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
         FriendsContract.FriendsColumns.FRIENDS_EMAIL };
         List<Friend> entries = new ArrayList <Friend>();
 
-        String selection = FriendsContract.FriendsColumns.FRIENDS_NAME + " LIKE " +mFilterText + "%";
+        String selection = FriendsContract.FriendsColumns.FRIENDS_NAME + " LIKE '" + mFilterText + "%'";
         mCursor = mContentResolver.query(FriendsContract.URI_TABLE, projection, selection, null, null);
         if (mCursor != null) {
             if(mCursor.moveToFirst()){
@@ -93,7 +88,7 @@ public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
             deliverResult(mFriends);
         }
 
-        if(takeContentChanged() || mFriends == null){
+        if(takeContentChanged() | mFriends == null) {
             forceLoad();
         }
     }
@@ -106,10 +101,9 @@ public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
     @Override
     protected void onReset() {
         onStopLoading();
-        if(mCursor != null){
+        if(mCursor != null) {
             mCursor.close();
         }
-
         mFriends = null;
     }
 
@@ -122,8 +116,8 @@ public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
     }
 
     @Override
-    protected void onForceLoad() {
-        super.onForceLoad();
+    public void forceLoad() {
+        super.forceLoad();
     }
 }
 
